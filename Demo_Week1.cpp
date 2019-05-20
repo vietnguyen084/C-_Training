@@ -56,6 +56,13 @@ int main() {
     cout<<"demoConv2  = "<<demoConv2<<" type is :";
     cout << typeid(demoConv2).name() << endl;
 
+
+    int demoConv3 = 75;
+    char demoConv4 = (char)demoConv3;
+    int demoConv5 = (int)demoConv4;
+    cout<<"demoConv4 : "<<demoConv4<<endl;
+    cout<<"demoConv5 : "<<demoConv5<<endl;
+
     // using in function
     cout<<"\nusing in function "<<endl;
     int ageViet = 23;
@@ -91,6 +98,14 @@ int main() {
         cout<<"Do you try again?(y/n): ";
         cin>>ans;
     }while(ans=='y');
+
+    // demo : input 2 number (out of range then calulate them (+, - , x ....) )
+
+    /* solution
+        intput: 2 number 
+        storage data: string type
+        calculate: shirk string then conversion to number type => ok
+    */
     
     return 0;
 }

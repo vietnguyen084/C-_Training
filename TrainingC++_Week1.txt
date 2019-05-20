@@ -1,0 +1,7 @@
+Bài tập tuần (13-19/5/2019)
+
+TOPIC: DATA TYPES IN C++
+
+SLIDE: https://docs.google.com/presentation/d/19k8r5_46ESI9aq9wuFSNWJJhLEHX8DDIbJgNmkPAHvw/edit#slide=id.g5a3896321a_0_1241
+WORD: https://docs.google.com/document/d/1hX4crWZgcAJE30wolf7YTB98cwq5oLBnoM2g4LnK998/edit
+CODE: https://github.com/vietnt-1404/C-_Training/blob/master/Demo_Week1.cpp

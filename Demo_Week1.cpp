@@ -18,6 +18,30 @@ char inputANumber(char a){
     return a;
 }
 
+void printChar(char a);
+void printInt(char a);
+
+void printChar(char a){
+    cout<<"Value char type : "<<a<<endl;
+}
+
+void printInt(int a){
+    cout<<"Value int type : "<<a<<endl;
+}
+
+string CalculateBigNumber(string firstNum, string sencondNum){
+    string results;
+    for(int i = 0 ; i<firstNum.length();i++){
+        
+    }
+
+
+
+
+    return results;
+
+}
+
 int main() {
     
     // Declare Data type
@@ -69,6 +93,10 @@ int main() {
     int ageThang = 28;
     string Brother = isBrother(ageViet, ageThang);
     cout<<"\tBrother = "<<Brother<<endl;
+
+
+    printChar(demoConv3);
+    printInt(demoConv3);
     
     // Size of some one data types
     cout<<"\nSize of some one data types in C++ = "<<Brother<<endl;
@@ -99,13 +127,5 @@ int main() {
         cin>>ans;
     }while(ans=='y');
 
-    // demo : input 2 number (out of range then calulate them (+, - , x ....) )
-
-    /* solution
-        intput: 2 number 
-        storage data: string type
-        calculate: shirk string then conversion to number type => ok
-    */
-    
     return 0;
 }

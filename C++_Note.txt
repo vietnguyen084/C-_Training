@@ -1,0 +1,162 @@
+============================================
+Data Type:
+* Primitive
+* Non-Primitive 
+- Range,size
+     2^size => range 
+- Converse type:
+============================================
+Variable:
+* local 
+* global
+* static: khai báo 1 lần mà dùng suốt chương trình vì OS đã chừa ra cho 1 địa chỉ để lưu giá trị nên k thay đổi được giá trị 
+============================================
+Decision Making:
+
+* if else
+------------
+* switch case
+
+có dấu { như là 1 block code thực thi bt} và không có {theo cấu trúc của IF thì chỉ có 1 câu lệnh dưới if là con => 1 khối đấy là con của nó}
+
+if else if .... tùy nó sẽ cùng cấp nếu không có dấu {}, là con nếu có {}
+* break, continue only using in loop and switch 
+* goto: sử dụng thỏa mái nhưng nó k cho phép khai báo các biến dưới lệnh goto vì sợ goto sẽ được dùng dưới đó
+* 1 block code {} same a function 
+============================================
+Loop:
+*for: clear target, nhìn vào viết đầu cuối
+*while: 1 target 
+ -2 vòng lặp này phù hợp với những bài toán khác nhau, tùy từng bài toán để sử dụng 
+============================================
+Operator:
+*bitwise: save memory 
+*prioritize: 
+
+khi so sánh == và != thì performen của != sẽ nhanh hơn vì theo kiểu so sánh bít 
+============================================
+Inline, define, const:
+     *const in class : không thay đồi được member of class
+     *khai báo const thì chỉ gọi đc hàm const
+          class test{
+               public:
+                    int member = 1;
+                    const int* count(int &a) const {a++;}
+                    void get(); 
+               };
+
+               int main(){
+               test t;
+               t.count(t.member);
+               cout << t.member << endl;
+               return 0;
+               }
+
+     Thật ra vẫn thay đổi được mình có thể truyền vào kiểu tham chiếu vào tham số truyền vào chứ k phải trực tiếp trong hàm
+
+     * const type */& const name = value; vd: const int* const pa = &a; int const * const pa = &a; <=> giá trị kiểu khai bào * / & địa chỉ kiểu khai báo = 
+     const int * const func(){ int *a = new int(); return a;}
+     => const địa chỉ k có ý nghĩa vì a sẽ hủy sau khi finish hàm
+     => const int * pa = func(); => trả về một con trỏ đang trỏ đến 1 địa chỉ có giá trị không thay đổi.
+
+     int a = 9;
+     const int * const fu = &a; 
+     => fu: const
+     => a có thể thay đồi 
+     * const function 
+          * value: no care 
+          * referece: vì giá trị thay đổi nên cần thống nhất kiểu khai báo nếu không sẽ báo error (func(const_cast<int &>(a)); dùng để ep lại về kiểu tham trị )
+
+------------------------------------------------
+#define - #undefine
+- thay thế text ở lúc preprocessor 
+- #define sum(a,b) a+b  a = sum(1,2);------------- gần giống inline: inline sẽ thay thế ở b4 trong lúc compile , define bước 1 
+
+     #define A ()
+     int main A {
+     }
+
+     #define A "aaaaa  => tùy vào IDE, compiler 
+     int main A {
+          string str = A";
+     }
+     ------------------------------------------------
+#inline: 
+- tùy complier sẽ 
+-inline: gọi đến hàm inline thì nó sẽ copy code bỏ vào dưới để chạy luôn - chạy tuần tự
+- bình thường: tại lúc gọi hàm nó sẽ lưu địa chỉ(lúc biên dịch) của hàm -chạy nhảy đi rồi về  
+------------------------------------------------
+============================================
+Function:
+* call by value
+* call by reference 
+
+
+
+
+==================================================
+Array:
+Array: có kích thước cố định không thể thay đổi. Khi khai báo thì OS đã cấp cho số ô nhớ = đúng chỗ giá trị kích thước để lưu mảng rồi.
+
+=> không phân mảnh bộ nhớ
+Vector:
+Vector: Kích thước có thể thay đổi. OS sẽ cấp cho 1 vùng nhớ để lưu giá trị ban đầu, sau khi cứ push data và nếu còn chỗ thì vẫn cứ ở đấy.
+Nếu thiếu thì nó sẽ copy hết chỗ data cũ để move sang chỗ mới đủ để lưu all giá trị kích thước đến current.
+
+=> Phân mảnh bộ nhớ là đây
+
+
+=====================================================
+? Tại sao lại bắt buộc phải khai báo số cột, số hàng có thể miss => rule rồi 
+
+
+Array: là 1 collection các phần tử có cùng kiểu nó refer đến cùng 1 name, được người dùng khai báo. nó sẽ lưu liên tiếp nhau trong bộ nhớ (tránh việc phân mảnh bộ nhớ so với vector). được truy xuất bới index
+- Mảng 1 chiều:
+     + là 1 tập hợp những phần tử có cùng kiểu và refer đến 1 name chung.
+- Mảng đa chiều:
+     + list các mảng 1 chiều và có cùng size
+Khai báo: 
+     + data_type array_name[array_size]; // 1 dimension 
+     + data_type array_name[array_size][array_size]...[array_size]; // multi-dimension 
++ khi khai báo mảng 2 chiều thì có thể  khai báo miss số hàng nhưng bắt buộc phải khai báo số cột
+Khởi tạo:
+     int array[4] = { 5, 8, 2, 7 }; 
+     int array[4] = { 5, 8 }; // 2 phần tử  chưa khởi tạo giá trị là  0 
+     int array[4] = { }; chưa khởi tạo giá trị là 0 
+     int array[] = { 5, 8, 2, 7 }; // không cần xác định số pt mà compiler sẽ xác định được.
+     int array4[] { 5, 8, 2, 7 }; // 5 8 2 7 // c++11  (uniform initialization)
+     nên 
+     #define MAX_ARRAY_NUMBER 10 
+     int array[MAX_ARRAY_NUMBER] = ..;
+
+     - Khi chưa khai báo kích thước trong mảng là các giá trị rác mà OS đang chưa sử dụng đến vùng nhớ này.
+     - Với sự tổ chức dạng này, thì t chỉ cần quan tâm đến địa chỉ ô nhớ đầu tiên và kích thước của mảng.
+Truy xuất:
+     - mỗi phần tử của mảng để được đánh 1 index riêng, để truy xuất ta gọi đến index của nó. mảng đánh index từ 0.
+     - truy xuất trực tiếp từng phần tử theo index của mảng 
+Kích thước:
+     Bộ nhớ sử dụng = <tổng số phần tử> * sizeof(<kiểu cơ sở>).
+     tính index mảnng = (address_of_current_element - address_of_the_first_element) / sizeof(data_type);
+     tính số phần tử trong mảng <number_of_elements> = sizeof(<name_of_array>) / sizeof(<type_of_array>);
+Lưu ý và Ứng dụng:
+     - Có thể gây ra dư thừa bộ nhớ nếu không sử dụng hết
+     - Số lượng phần tử lớn không thể lưu trữ 
+     - Nên chọn bài toán phù hợp để sử dụng 
+Sử dụng mảng với hàm 
+     - truyền mảng vào hàm 
+          * return_type function_name(array_name);
+               + return_type function(type array_name[SIZE]) // sized
+               + return_type function(type array_name[]) // unsized
+               + return_type function(type *array_name) // pointer 
+          void printSize(int array[]); same void printSize(int *array);
+     
+     - Hàm trả về 1 mảng 
+          - sử dụng con trỏ để trỏ đến các phần tử của mảng theo giá trị trả về (địa chỉ) của hàm. 
+     - Hàm với non-primitive 
+Lưu ý:
+     - 
+Sử dụng lib 
+     https://en.cppreference.com/w/cpp/container/array
+     https://www.tutorialspoint.com/cpp_standard_library/array.htm
+     http://www.cplusplus.com/reference/array/array/
+     https://www.geeksforgeeks.org/stdarray-in-cpp/

@@ -1,0 +1,31 @@
+Array in C++
+4. Mảng 1 chiều và mảng đa chiều
+1. Khai báo
+2. Khởi tạo
+3. Truy suất,index
+9. kích thước của mảng
+5. Con trỏ trỏ đến 1 Mảng
+6. Sử dụng mảng với function
+7. hàm trả về 1 mảng(return và reference)
+10. Tạo mảng với kiểu dữ liệu non-primitive
+8. Một số lưu ý khi sử dụng array.
+11. Ứng dụng, sử dụng lib
+
+
+
+
+
+Array:
+1. Khai báo và cách sử dụng 
+    - mảng 1 chiều và đa chiều 
+    + Khai báo - một số cách khai báo 
+    + Cách sử dụng - truy suất, khởi tạo, dùng con trỏ 
+2. Một số đặc điểm của mảng 
+    + kích thước, phạm vi giá trị của mảng
+    + index
+3. Sử dụng mảng với hàm
+    + Hàm trả về 1 mảng
+    + Hàm làm thay đổi giá trị của mảng - dùng tham chiếu
+4. Một số lưu ý và ứng dụng của hàm 
+    + sử dụng thư viện 
+    + một số bài toán 

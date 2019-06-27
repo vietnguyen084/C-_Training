@@ -106,7 +106,7 @@ Nếu thiếu thì nó sẽ copy hết chỗ data cũ để move sang chỗ mớ
 => Phân mảnh bộ nhớ là đây
 
 
-=====================================================
+===================================================================
 ? Tại sao lại bắt buộc phải khai báo số cột, số hàng có thể miss => rule rồi 
 
 
